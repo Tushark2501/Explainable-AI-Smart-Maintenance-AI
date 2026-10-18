@@ -70,50 +70,12 @@ Three public datasets are used. They are **not** included in this repository. Se
 ```
 .
 ├── Smart_Maintenance_AI.ipynb   # Full Colab notebook (training, evaluation, fusion)
-├── Smart_Maintenance_AI.html    # Interactive web demo and graph gallery
+├── index.html    # Interactive web demo and graph gallery
 ├── README.md
 ├── DATASET.md
-└── (generated when you run the notebook)
-    ├── models/                  # Saved models and scalers
-    ├── results/                 # Figures, tables, JSON reports
-    └── reports/                 # Machine health reports
+
 ```
 
-## Getting started
-
-### 1. Run in Google Colab (recommended)
-
-1. Open `Smart_Maintenance_AI.ipynb` in Google Colab (GPU runtime recommended for the LSTM and ResNet50).
-2. Download the three datasets (see `DATASET.md`) and place them in the Google Drive folder the notebook expects.
-3. Run all cells in order. The notebook mounts Drive and saves models, figures and reports there.
-
-### 2. Run locally
-
-```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
-pip install pandas numpy matplotlib seaborn scikit-learn xgboost shap joblib \
-            torch torchvision sentence-transformers jupyter
-jupyter notebook Smart_Maintenance_AI.ipynb
-```
-
-Edit the Drive/data path variables at the top of the notebook to point to your local dataset folders.
-
-### 3. Web demo
-
-Open `Smart_Maintenance_AI.html` in any browser. Enter product type, sensor failure probability, RUL, image defect and confidence, and a maintenance log to get a combined assessment, or browse the notebook's graphs. Values marked *Notebook output* come directly from the notebook, and the rest are in-browser estimates.
-
-## Tech stack
-
-Python · pandas · NumPy · scikit-learn · XGBoost · SHAP · PyTorch / torchvision · Sentence-Transformers · Matplotlib / Seaborn · HTML/CSS/JavaScript
-
-## Known limitations
-
-- **Label leakage in the sensor model:** the AI4I failure-mode flags (TWF, HDF, PWF, OSF, RNF) are used as input features, but they define the `Machine failure` target. Reported sensor-model scores are therefore optimistic, and removing these flags is the first planned fix.
-- **RUL validation:** overlapping 30-cycle windows are split randomly, so windows from the same engine can appear in both train and validation. An engine-wise split and the official test set would give stricter metrics.
-- **Fusion:** weights and thresholds are hand-chosen, not learned, and the demo inputs come from different sources. A probability given as a percentage (for example 0.93%) must not be passed where a fraction is expected.
-- **Image model:** only the final layer was trained, for 5 epochs, so softmax confidences are low and not calibrated.
-- **NLP:** the log module has no labelled evaluation set, and it extracts fault type, severity and keywords but not components or maintenance history.
 
 ## Future work
 
@@ -132,6 +94,4 @@ Python · pandas · NumPy · scikit-learn · XGBoost · SHAP · PyTorch / torchv
 - Explainable Predictive Maintenance of Rotating Machines Using LIME, SHAP, PDP, ICE, IEEE Access, vol. 12, 2024
 - Explainable Artificial Intelligence for Predictive Maintenance Applications, 2020
 
-## License
 
-Add a license of your choice (for example MIT) before publishing. Dataset licences belong to their original providers.
