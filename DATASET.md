@@ -127,6 +127,4 @@ NEU-DET/
 
 ---
 
-## Licences and citation
 
-Each dataset is owned by its original provider. Check and follow the licence and citation requirements on the source pages before redistributing or publishing results.
