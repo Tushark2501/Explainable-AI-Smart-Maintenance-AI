@@ -4,7 +4,7 @@
 
 Smart Maintenance AI combines four kinds of industrial evidence (sensor readings, run-to-failure time series, component images and operator maintenance logs) into one explainable machine-health report. It predicts failure risk, estimates Remaining Useful Life (RUL), detects anomalies, classifies surface defects, interprets free-text logs, and fuses everything into an overall status with maintenance recommendations.
 
-**[ Website Link:](https://explainable-ai-smart-maintenance-ai.vercel.app/)**
+**Website Link:** https://explainable-ai-smart-maintenance-ai.vercel.app/
 
 ---
 
