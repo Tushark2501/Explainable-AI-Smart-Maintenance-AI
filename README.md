@@ -72,6 +72,7 @@ Three public datasets are used. They are **not** included in this repository. Se
 ├── index.html    # Interactive web demo and graph gallery
 ├── README.md
 ├── DATASET.md
+├── Smart_Maintenance_AI-Project Report
 
 ```
 
